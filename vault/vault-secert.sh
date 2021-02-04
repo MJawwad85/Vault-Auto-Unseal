@@ -13,9 +13,9 @@ vault -v
 
 vault operator init >> /etc/vault/key.log
 
-KEY_1=$(cat /etc/vault/keys.log | grep 'Unseal Key 1:' | awk '{print $4}')
-KEY_2=$(cat /etc/vault/keys.log | grep 'Unseal Key 2:' | awk '{print $4}')
-KEY_3=$(cat /etc/vault/keys.log | grep 'Unseal Key 3:' | awk '{print $4}')
+KEY_1=$(cat /etc/vault/key.log | grep 'Unseal Key 1:' | awk '{print $4}')
+KEY_2=$(cat /etc/vault/key.log | grep 'Unseal Key 2:' | awk '{print $4}')
+KEY_3=$(cat /etc/vault/key.log | grep 'Unseal Key 3:' | awk '{print $4}')
 
 
 vault operator unseal $KEY_1
