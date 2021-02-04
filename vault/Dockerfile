@@ -19,13 +19,19 @@ RUN wget --quiet --output-document=/tmp/vault.zip https://releases.hashicorp.com
 # update PATH
 ENV PATH="PATH=$PATH:$PWD/usr/bin/vault"
 
+ENV VAULT_ADDR='http://127.0.0.1:8200'
+ENV VAULT_API_ADDR='http://127.0.0.18200'
+ENV VAULT_SKIP_VERIFY=true
+ENV api_addr='http://127.0.0.1:8200'
+
 # add the config file
 COPY ./vault-config.json /etc/vault/vault-config.json
- 
+
 # expose port 8200
 EXPOSE 8200
 
 #Copy Script
 COPY ./vault-secert.sh /usr/bin/vault-secert.sh
+RUN chmod +x /usr/bin/vault-secert.sh
 
-ENTRYPOINT [""]
+ENTRYPOINT ["vault-secert.sh"]
