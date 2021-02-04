@@ -27,6 +27,5 @@ EXPOSE 8200
 
 #Copy Script
 COPY ./vault-secert.sh /usr/bin/vault-secert.sh
-COPY ./preinit.sh /usr/bin/preinit.sh
 
 ENTRYPOINT [""]
