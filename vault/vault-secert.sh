@@ -11,6 +11,7 @@ echo $VAULT_ADDR
 echo $KEY_1
 vault -v
 
+
 vault operator init >> /etc/vault/key.log
 
 KEY_1=$(cat /etc/vault/key.log | grep 'Unseal Key 1:' | awk '{print $4}')
