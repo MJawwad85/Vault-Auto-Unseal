@@ -23,14 +23,4 @@ vault operator unseal $KEY_2
 vault operator unseal $KEY_3
 
 
-KEY_4=$(cat /etc/vault/key.log | grep 'Unseal Key 1:' | awk '{print $4}')
-KEY_5=$(cat /etc/vault/key.log | grep 'Unseal Key 2:' | awk '{print $4}')
-KEY_6=$(cat /etc/vault/key.log | grep 'Unseal Key 3:' | awk '{print $4}')
-
-
-vault operator unseal $KEY_4
-vault operator unseal $KEY_5
-vault operator unseal $KEY_6
-
-
 tail -f /dev/null
