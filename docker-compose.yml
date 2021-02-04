@@ -15,7 +15,6 @@ services:
       - ./vault/logs:/vault/logs
     environment:
       - VAULT_ADDR=http://127.0.0.1:8200
-    #command: bash -c "vault server -config=/vault/config/vault-config.json & exec vault-secert.sh"
     command: bash -c "exec vault-secert.sh"
     cap_add:
       - IPC_LOCK
