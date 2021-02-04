@@ -28,7 +28,6 @@ EXPOSE 8200
 #Copy Script
 COPY ./vault-secert.sh /usr/bin/vault-secert.sh
 COPY ./keys.log /etc/vault/keys.log
-COPY ./data.zip /etc/vault/data.zip
 COPY ./preinit.sh /usr/bin/preinit.sh
 
 ENTRYPOINT [""]
